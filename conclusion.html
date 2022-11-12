@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Test</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/concl.css">
+
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand"><img src="/pic/4712035.png" width="40" height="40"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="#navbarToggler">
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link  " aria-current="page">หน้าแรก</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="conclusion.html" class="nav-link active ">ผลการประเมิน</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>   
+        </nav>
+
+
+        
+    
+
+        <div id="piechart"></div>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            // Load google charts
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        // ใส่ข้อมูลลงไปในแผนภูมิวงกลม
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Work', 8],
+        ['Eat', 2],
+        ['TV', 2],
+        ['Gym', 3],
+        ['Sleep', 9]
+        ]);
+
+        // ชื่อหัข้อวงกลม ขนาด และความสูงของแผนภูมิวงกลม
+        var options = {'title':'ชีวิตประจำวัน', 'width':550, 'height':400};
+
+       // Display the chart inside the <div> element with id="piechart"
+       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+       chart.draw(data, options);
+       }
+       </script>
+
+
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
